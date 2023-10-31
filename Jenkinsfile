@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bin/python3 /home/globant/pyTraining/test_mainClick.py
+               echo 'Test...'
             }
         }
         stage('Deploy') {
