@@ -2,13 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Clonar Repositorio') {
-            steps {
-                // Clonar tu repositorio desde un sistema de control de versiones (p. ej., Git)
-                sh 'git clone https://github.com/CMBB-R/forPy.git'
-            }
-        }
-
+    
         stage('Configurar Entorno') {
             steps {
                 // Instalar Python y crear un entorno virtual
