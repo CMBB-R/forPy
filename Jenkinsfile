@@ -14,26 +14,26 @@ pipeline {
             }
         }
 
-        stage('Ejecutar Pruebas') {
+      stage('Ejecutar Pruebas') {
             steps {
-                // Ejecutar pruebas de Python utilizando unittest
+               echo "ejecutando pruebas" // Ejecutar pruebas de Python utilizando unittest
                 sh 'python -m unittest tests.py'
             }
         }
 
         stage('Publicar Resultados') {
             steps {
-                // Opcional: Publicar informes de pruebas o resultados
+               echo "result" // Opcional: Publicar informes de pruebas o resultados
             }
         }
     }
 
     post {
         success {
-            // Acciones posteriores si las pruebas son exitosas
+            echo "aun nada"// Acciones posteriores si las pruebas son exitosas
         }
         failure {
-            // Acciones posteriores si las pruebas fallan
+           echo "aun nada" // Acciones posteriores si las pruebas fallan
         }
     }
 }
