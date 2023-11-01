@@ -1,39 +1,15 @@
 pipeline {
     agent any
-
     stages {
-    
-        stage('Configurar Entorno') {
+        stage('version') {
             steps {
-                // Instalar Python y crear un entorno virtual
-                sh 'python3 -m venv venv'
-                sh 'source venv/bin/activate'
-
-                // Instalar dependencias
-                sh 'pip install -r requirements.txt'  // Si tienes un archivo de requisitos
+                sh 'python3 --version'
             }
         }
-
-      stage('Ejecutar Pruebas') {
+        stage('mainClick') {
             steps {
-               echo "ejecutando pruebas" // Ejecutar pruebas de Python utilizando unittest
-                sh 'python -m unittest tests.py'
+                sh 'python3 mainClick.py'
             }
-        }
-
-        stage('Publicar Resultados') {
-            steps {
-               echo "result" // Opcional: Publicar informes de pruebas o resultados
-            }
-        }
-    }
-
-    post {
-        success {
-            echo "aun nada"// Acciones posteriores si las pruebas son exitosas
-        }
-        failure {
-           echo "aun nada" // Acciones posteriores si las pruebas fallan
         }
     }
 }
