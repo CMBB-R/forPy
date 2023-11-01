@@ -1,9 +1,14 @@
 pipeline {
     agent any
     stages {
-        stage('InstallPy') {
+        stage('Install Python') {
             steps {
-                sh 'pyenv install 3.8.12'
+                script {
+                    // Set the desired Python version
+                    def pythonVersion = '3.8.12' // Replace with your desired version
+                    def pythonHome = tool name: "Python-${pythonVersion}", type: 'hudson.plugins.python.PythonInstallation'
+                    env.PATH = "${pythonHome}/bin:${env.PATH}"
+                }
             }
         }
         stage('versionPy') {
