@@ -9,8 +9,8 @@ pipeline {
         stage('Check Format') {
             steps {
                 script {
-                    def python3-pep8_result = sh(script: 'pep8 mainClick.py', returnStatus: true)
-                    if (python3-pep8_result != 0) {
+                    def pep8_result = sh(script: 'python3-pep8 mainClick.py', returnStatus: true)
+                    if (pep8_result != 0) {
                         error('PEP8 check failed. Please fix the formatting issues.')
                     }
                 }
