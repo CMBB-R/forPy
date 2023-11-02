@@ -9,7 +9,7 @@ pipeline {
         stage('Check Format') {
             steps {
                 script {
-                    sh 'pycodestyle your_script.py'
+                    sh 'pycodestyle mainClick.py'
                     }
                 }
             }
