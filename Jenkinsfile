@@ -6,11 +6,6 @@ pipeline {
                 sh 'python3 --version'
             }
         }
-        stage('Checkout') {
-            steps {
-                checkout scm
-            }
-        }
         stage('Check Format') {
             steps {
                 script {
